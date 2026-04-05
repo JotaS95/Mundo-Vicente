@@ -79,7 +79,6 @@ function toggleMenu() {
   const menu = document.getElementById('navMenu');
   if (menu) {
     menu.classList.toggle('abierto');
-    console.log("Menu toggle: " + menu.classList.contains('abierto'));
   }
 }
 
@@ -112,6 +111,7 @@ document.addEventListener('click', (e) => {
   const btn = document.querySelector('.nav-hamburguesa');
   
   if (menu && menu.classList.contains('abierto')) {
+    // Si el clic NO fue en el menú Y NO fue en el botón del menú
     if (!menu.contains(e.target) && !btn.contains(e.target)) {
       menu.classList.remove('abierto');
     }
