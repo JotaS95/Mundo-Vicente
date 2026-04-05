@@ -2,6 +2,10 @@
 // MUNDO DE VICENTE — Interactividad y Lógica
 // ============================================
 
+// Variables Globales
+const secciones = document.querySelectorAll('.seccion');
+const enlacesNav = document.querySelectorAll('.nav-menu a');
+
 // ---------- Pantalla de Bienvenida ----------
 function cerrarBienvenida() {
   const pantalla = document.getElementById('pantalla-bienvenida');
@@ -73,11 +77,14 @@ function marcarEnlaceActivo(id) {
 // ---------- Menú de Navegación ----------
 function toggleMenu() {
   const menu = document.getElementById('navMenu');
-  menu.classList.toggle('abierto');
+  if (menu) {
+    menu.classList.toggle('abierto');
+    console.log("Menu toggle: " + menu.classList.contains('abierto'));
+  }
 }
 
 // Cerrar menú al hacer clic en un enlace
-document.querySelectorAll('.nav-menu a').forEach(enlace => {
+enlacesNav.forEach(enlace => {
   enlace.addEventListener('click', (e) => {
     const id = enlace.getAttribute('href').substring(1);
     
@@ -93,9 +100,22 @@ document.querySelectorAll('.nav-menu a').forEach(enlace => {
         window.scrollTo(0, 0); // Ir arriba de la sección
         marcarEnlaceActivo(id);
       }
-      document.getElementById('navMenu').classList.remove('abierto');
+      const menu = document.getElementById('navMenu');
+      if (menu) menu.classList.remove('abierto');
     }
   });
+});
+
+// Cerrar menú al hacer clic fuera de él
+document.addEventListener('click', (e) => {
+  const menu = document.getElementById('navMenu');
+  const btn = document.querySelector('.nav-hamburguesa');
+  
+  if (menu && menu.classList.contains('abierto')) {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('abierto');
+    }
+  }
 });
 
 // Resaltar enlace activo al hacer scroll (Solo PC)

@@ -1450,6 +1450,10 @@ body {
     padding: 0 10px;
   }
 
+  .nav-logo-texto {
+    font-size: 1.2rem; /* Más pequeño en móviles */
+  }
+
   .seccion {
     padding: 40px 15px;
     min-height: 100vh; /* Cada sección ocupa toda la pantalla en móvil */
@@ -1524,9 +1528,12 @@ body {
 
   .nav-hamburguesa {
     display: block;
-    font-size: 2rem;
+    font-size: 2.2rem;
     z-index: 1001;
     position: relative;
+    padding: 10px;
+    margin-right: -10px; /* Acercar al borde */
+    -webkit-tap-highlight-color: transparent; /* Quitar cuadro azul de click en móvil */
   }
 
   .dialogo-octonauta {
