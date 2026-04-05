@@ -1538,19 +1538,20 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Reducir Pepe Guía en móvil para no tapar contenido */
+  /* Reducir Pepe Guía en móvil al 30% para no tapar nada */
   .pepe-guia {
-    bottom: 15px;
-    left: 15px;
+    bottom: 10px;
+    left: 10px;
   }
   .pepe-guia img {
-    width: 85px;
+    width: 55px;
   }
   .pepe-tooltip {
-    bottom: 100px;
-    max-width: 180px;
-    font-size: 0.85rem;
-    padding: 10px 15px;
+    bottom: 70px;
+    left: 10px;
+    max-width: 150px;
+    font-size: 0.8rem;
+    padding: 8px 12px;
   }
 }
 
