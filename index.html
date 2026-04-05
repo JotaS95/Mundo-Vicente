@@ -6,6 +6,12 @@
   <meta name="description" content="El Mundo de Vicente - Página educativa interactiva sobre naturaleza, animales y ciencia para niños">
   <title>🌎 El Mundo de Vicente</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Evitar parpadeo de bienvenida al recargar
+    if (localStorage.getItem('bienvenidaVisto')) {
+      document.documentElement.classList.add('bienvenida-ocultar');
+    }
+  </script>
 </head>
 <body>
 

@@ -7,8 +7,8 @@ function cerrarBienvenida() {
   const pantalla = document.getElementById('pantalla-bienvenida');
   pantalla.classList.add('ocultar');
   
-  // Guardar en sessionStorage para que no aparezca en cada recarga
-  sessionStorage.setItem('bienvenidaVisto', 'true');
+  // Guardar en localStorage para que sea persistente (solo una vez en la vida)
+  localStorage.setItem('bienvenidaVisto', 'true');
   
   // Activar contadores cuando desaparezca la pantalla
   setTimeout(() => {
@@ -16,13 +16,59 @@ function cerrarBienvenida() {
   }, 1000);
 }
 
-// Ocultar la pantalla de bienvenida si ya se ha visto en esta sesión
+// Ocultar la pantalla de bienvenida si ya se ha visto
 window.addEventListener('DOMContentLoaded', () => {
-  if (sessionStorage.getItem('bienvenidaVisto')) {
-    document.getElementById('pantalla-bienvenida').style.display = 'none';
+  if (localStorage.getItem('bienvenidaVisto')) {
+    const pantalla = document.getElementById('pantalla-bienvenida');
+    if (pantalla) pantalla.style.display = 'none';
     setTimeout(iniciarContadores, 500);
   }
+  
+  // Inicializar navegación según dispositivo
+  controlarNavegacion();
 });
+
+// ---------- Control de Navegación (Móvil vs PC) ----------
+let modoMovil = window.innerWidth <= 768;
+
+function controlarNavegacion() {
+  const seccionInicial = 'fauna'; // Sección por defecto
+  
+  if (modoMovil) {
+    // Modo Mobile: Solo mostramos una sección a la vez
+    document.querySelectorAll('.seccion').forEach(seccion => {
+      seccion.style.display = 'none';
+    });
+    const activa = document.getElementById(seccionInicial);
+    if (activa) activa.style.display = 'block';
+    
+    // Marcar el primer enlace como activo
+    marcarEnlaceActivo(seccionInicial);
+  } else {
+    // Modo Desktop: Todo visible
+    document.querySelectorAll('.seccion').forEach(seccion => {
+      seccion.style.display = 'block';
+    });
+  }
+}
+
+// Escuchar cambios de tamaño de ventana
+window.addEventListener('resize', () => {
+  const esMovilAhora = window.innerWidth <= 768;
+  if (esMovilAhora !== modoMovil) {
+    modoMovil = esMovilAhora;
+    controlarNavegacion();
+  }
+});
+
+function marcarEnlaceActivo(id) {
+  enlacesNav.forEach(enlace => {
+    enlace.classList.remove('activo-nav');
+    if (enlace.getAttribute('href') === `#${id}`) {
+      enlace.classList.add('activo-nav');
+    }
+  });
+}
 
 // ---------- Menú de Navegación ----------
 function toggleMenu() {
@@ -30,35 +76,40 @@ function toggleMenu() {
   menu.classList.toggle('abierto');
 }
 
-// Cerrar menú al hacer clic en un enlace (móviles)
+// Cerrar menú al hacer clic en un enlace
 document.querySelectorAll('.nav-menu a').forEach(enlace => {
-  enlace.addEventListener('click', () => {
-    document.getElementById('navMenu').classList.remove('abierto');
+  enlace.addEventListener('click', (e) => {
+    const id = enlace.getAttribute('href').substring(1);
+    
+    if (modoMovil) {
+      e.preventDefault();
+      // Ocultar todas y mostrar la seleccionada
+      document.querySelectorAll('.seccion').forEach(seccion => {
+        seccion.style.display = 'none';
+      });
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = 'block';
+        window.scrollTo(0, 0); // Ir arriba de la sección
+        marcarEnlaceActivo(id);
+      }
+      document.getElementById('navMenu').classList.remove('abierto');
+    }
   });
 });
 
-// Resaltar enlace activo al hacer scroll
-const secciones = document.querySelectorAll('.seccion');
-const enlacesNav = document.querySelectorAll('.nav-menu a');
-
+// Resaltar enlace activo al hacer scroll (Solo PC)
 window.addEventListener('scroll', () => {
+  if (modoMovil) return; // En móvil no resaltamos por scroll ya que solo hay una sección
+
   let scrollY = window.scrollY;
-  
   secciones.forEach(seccion => {
     const sectionHeight = seccion.offsetHeight;
     const sectionTop = seccion.offsetTop - 100;
     const sectionId = seccion.getAttribute('id');
     
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      enlacesNav.forEach(enlace => {
-        enlace.style.background = 'transparent';
-        enlace.style.color = 'var(--color-texto)';
-      });
-      const enlaceActivo = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
-      if (enlaceActivo) {
-        enlaceActivo.style.background = 'var(--color-cielo-claro)';
-        enlaceActivo.style.color = 'var(--color-oceano)';
-      }
+      marcarEnlaceActivo(sectionId);
     }
   });
 });
