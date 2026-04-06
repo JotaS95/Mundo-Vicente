@@ -36,24 +36,10 @@ window.addEventListener('DOMContentLoaded', () => {
 let modoMovil = window.innerWidth <= 768;
 
 function controlarNavegacion() {
-  const seccionInicial = 'fauna'; // Sección por defecto
-  
-  if (modoMovil) {
-    // Modo Mobile: Solo mostramos una sección a la vez
-    document.querySelectorAll('.seccion').forEach(seccion => {
-      seccion.style.display = 'none';
-    });
-    const activa = document.getElementById(seccionInicial);
-    if (activa) activa.style.display = 'block';
-    
-    // Marcar el primer enlace como activo
-    marcarEnlaceActivo(seccionInicial);
-  } else {
-    // Modo Desktop: Todo visible
-    document.querySelectorAll('.seccion').forEach(seccion => {
-      seccion.style.display = 'block';
-    });
-  }
+  // Ahora todas las secciones son siempre visibles para permitir scroll vertical tradicional
+  document.querySelectorAll('.seccion').forEach(seccion => {
+    seccion.style.display = 'block';
+  });
 }
 
 // Escuchar cambios de tamaño de ventana
@@ -75,32 +61,8 @@ function marcarEnlaceActivo(id) {
 }
 
 // ---------- Menú de Navegación ----------
-// La función toggleMenu ya no es necesaria al no haber botón hamburguesa
-// pero mantenemos la lógica de navegación por secciones para móvil
-
-// Cerrar menú al hacer clic en un enlace (y navegar en móvil)
-enlacesNav.forEach(enlace => {
-  enlace.addEventListener('click', (e) => {
-    const href = enlace.getAttribute('href');
-    if (!href || !href.startsWith('#')) return;
-    
-    const id = href.substring(1);
-    
-    if (modoMovil) {
-      e.preventDefault();
-      // Ocultar todas y mostrar la seleccionada
-      document.querySelectorAll('.seccion').forEach(seccion => {
-        seccion.style.display = 'none';
-      });
-      const target = document.getElementById(id);
-      if (target) {
-        target.style.display = 'block';
-        window.scrollTo(0, 0); // Ir arriba de la sección
-        marcarEnlaceActivo(id);
-      }
-    }
-  });
-});
+// Todas las secciones son visibles por defecto. 
+// No interceptamos el clic para ocultar/mostrar, dejamos que el scroll nativo haga su trabajo.
 
 // Resaltar enlace activo al hacer scroll (Solo PC)
 

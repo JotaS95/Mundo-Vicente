@@ -1459,18 +1459,15 @@ body {
 
   .nav-contenido {
     height: 60px;
-    padding: 0 10px;
-    gap: 10px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center; /* Centrar logo en móvil si no hay menú */
     width: 100%;
-    overflow: hidden; /* Evita que el contenido empuje el ancho del navbar */
   }
 
   .seccion {
-    padding: 40px 15px;
-    min-height: 100vh; /* Cada sección ocupa toda la pantalla en móvil */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 60px 20px;
+    min-height: auto; /* Altura natural de contenido */
   }
 
   .seccion-titulo {
@@ -1500,19 +1497,7 @@ body {
   }
 
   .nav-menu {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    background: transparent;
-    padding: 0;
-    box-shadow: none;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    flex: 1;
-    min-width: 0; /* CRÍTICO: permite que el elemento flex se encoja para scrollear */
-    gap: 8px;
-    scrollbar-width: none;
+    display: none !important; /* Quitar barra de iconos en móvil */
   }
 
   .nav-menu::-webkit-scrollbar {
