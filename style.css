@@ -1458,9 +1458,11 @@ body {
   }
 
   .nav-contenido {
-    height: 60px; /* Navbar más bajo en móvil */
+    height: 60px;
     padding: 0 10px;
     gap: 10px;
+    width: 100%;
+    overflow: hidden; /* Evita que el contenido empuje el ancho del navbar */
   }
 
   .seccion {
@@ -1499,9 +1501,8 @@ body {
 
   .nav-menu {
     display: flex;
-    position: static;
+    position: relative;
     flex-direction: row;
-    width: auto;
     background: transparent;
     padding: 0;
     box-shadow: none;
@@ -1509,8 +1510,9 @@ body {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     flex: 1;
+    min-width: 0; /* CRÍTICO: permite que el elemento flex se encoja para scrollear */
     gap: 8px;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
   }
 
   .nav-menu::-webkit-scrollbar {
@@ -1518,7 +1520,7 @@ body {
   }
 
   .nav-menu.abierto {
-    right: auto;
+    display: none; /* Eliminar rastro del menú viejo */
   }
 
   .nav-menu li {
