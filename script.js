@@ -75,17 +75,16 @@ function marcarEnlaceActivo(id) {
 }
 
 // ---------- Menú de Navegación ----------
-function toggleMenu() {
-  const menu = document.getElementById('navMenu');
-  if (menu) {
-    menu.classList.toggle('abierto');
-  }
-}
+// La función toggleMenu ya no es necesaria al no haber botón hamburguesa
+// pero mantenemos la lógica de navegación por secciones para móvil
 
-// Cerrar menú al hacer clic en un enlace
+// Cerrar menú al hacer clic en un enlace (y navegar en móvil)
 enlacesNav.forEach(enlace => {
   enlace.addEventListener('click', (e) => {
-    const id = enlace.getAttribute('href').substring(1);
+    const href = enlace.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+    
+    const id = href.substring(1);
     
     if (modoMovil) {
       e.preventDefault();
@@ -99,24 +98,11 @@ enlacesNav.forEach(enlace => {
         window.scrollTo(0, 0); // Ir arriba de la sección
         marcarEnlaceActivo(id);
       }
-      const menu = document.getElementById('navMenu');
-      if (menu) menu.classList.remove('abierto');
     }
   });
 });
 
-// Cerrar menú al hacer clic fuera de él
-document.addEventListener('click', (e) => {
-  const menu = document.getElementById('navMenu');
-  const btn = document.querySelector('.nav-hamburguesa');
-  
-  if (menu && menu.classList.contains('abierto')) {
-    // Si el clic NO fue en el menú Y NO fue en el botón del menú
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      menu.classList.remove('abierto');
-    }
-  }
-});
+// Resaltar enlace activo al hacer scroll (Solo PC)
 
 // Resaltar enlace activo al hacer scroll (Solo PC)
 window.addEventListener('scroll', () => {

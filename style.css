@@ -354,35 +354,38 @@ body {
 
 .nav-logo-texto {
   font-family: var(--font-titulo);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 800;
   background: var(--grad-atardecer);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  white-space: nowrap;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 5px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 2px;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  flex: 1;
 }
 
 .nav-menu a {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
+  gap: 4px;
+  padding: 6px 10px;
   text-decoration: none;
   font-family: var(--font-divertido);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--color-texto);
-  border-radius: 25px;
+  border-radius: 20px;
   transition: var(--trans-rapida);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-menu a:hover {
@@ -1451,7 +1454,13 @@ body {
   }
 
   .nav-logo-texto {
-    font-size: 1.2rem; /* Más pequeño en móviles */
+    font-size: 1.1rem; /* Más compacto en móvil */
+  }
+
+  .nav-contenido {
+    height: 60px; /* Navbar más bajo en móvil */
+    padding: 0 10px;
+    gap: 10px;
   }
 
   .seccion {
@@ -1490,53 +1499,51 @@ body {
 
   .nav-menu {
     display: flex;
-    position: fixed;
-    top: 0;
-    right: -280px; /* Oculto a la derecha */
-    bottom: 0;
-    width: 280px;
-    background: rgba(255, 255, 255, 1); /* Opaco para evitar confusión */
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 90px 25px 25px;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 20000; /* Super alto para estar sobre el hero y bienvenida */
-    border-radius: 30px 0 0 30px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+    gap: 8px;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
   }
 
   .nav-menu.abierto {
-    right: 0;
-    left: auto;
+    right: auto;
   }
 
   .nav-menu li {
-    width: 100%;
-    margin: 10px 0;
+    width: auto;
+    margin: 0;
+    flex-shrink: 0;
   }
 
   .nav-menu a {
-    font-size: 1.15rem; /* Un poco más pequeño para que quepan todas */
-    padding: 12px 18px;
-    border-radius: 12px;
-    width: 100%;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(0,0,0,0.05); /* Separador sutil */
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 65px;
+    border-bottom: none;
+    background: white;
+    border: 1px solid var(--color-sol);
+  }
+
+  .nav-menu a .nav-emoji {
+    font-size: 1.1rem;
   }
 
   .nav-hamburguesa {
-    display: block;
-    font-size: 2.2rem;
-    z-index: 1001;
-    position: relative;
-    padding: 10px;
-    margin-right: -10px; /* Acercar al borde */
-    -webkit-tap-highlight-color: transparent; /* Quitar cuadro azul de click en móvil */
+    display: none !important;
   }
 
   .dialogo-octonauta {
