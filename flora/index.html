@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌿 Flora — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../flora/index.html" class="nav-activo"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../juegos/index.html"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== FLORA NATIVA ========== -->
+<section class="seccion seccion-flora" id="flora">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo">
+      <span class="emoji-titulo">🌿</span> Flora de la Patagonia <span class="emoji-titulo">🍂</span>
+    </h2>
+    <p class="seccion-subtitulo">Las plantas más resistentes del mundo crecen aquí, soportando vientos de más de 100 km/h</p>
+
+    <div class="destacada-layout aparicion">
+      <div class="destacada-info">
+        <h3>🌿 Bosques de Lenga y Coigüe</h3>
+        <p>Los bosques nativos de Punta Arenas están formados principalmente por lengas y coigües de Magallanes. En otoño, las lengas se visten de rojo, naranja y dorado, creando paisajes espectaculares.</p>
+        <div class="tarjeta-dato">
+          <span class="dato-emoji">🍂</span>
+          <div class="dato-texto"><strong>La Lenga</strong> puede crecer hasta 30 metros de alto. Sus hojas cambian de color en otoño como un arcoíris natural.</div>
+        </div>
+        <div class="tarjeta-dato">
+          <span class="dato-emoji">🫐</span>
+          <div class="dato-texto"><strong>El Calafate</strong> tiene frutos morados deliciosos. La leyenda dice que quien come calafate, siempre regresará a la Patagonia.</div>
+        </div>
+      </div>
+      <div class="destacada-imagen">
+        <img src="../img/flora/flora-punta-arenas.png" alt="Flora nativa de Punta Arenas">
+      </div>
+    </div>
+
+    <div class="tarjeta-grid" style="margin-top:50px;">
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/flora/flora-notro.png" alt="Notro en flor"></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-etiqueta">🔴 Flor nativa</div>
+          <h3 class="tarjeta-titulo">El Notro (Ciruelillo)</h3>
+          <p class="tarjeta-texto">Es un árbol que se llena de flores rojas brillantes en primavera. Crece en los bordes de los bosques y cerca de ríos. ¡Es como un semáforo rojo natural en medio del verde!</p>
+        </div>
+      </div>
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/flora/flora-musgos.png" alt="Musgos y líquenes"></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-etiqueta">🟢 Bosque mágico</div>
+          <h3 class="tarjeta-titulo">Musgos y Líquenes</h3>
+          <p class="tarjeta-texto">Los bosques patagónicos están cubiertos de musgos esponjosos verde esmeralda y líquenes que cuelgan de las ramas como barbas de duende. ¡Parecen bosques de cuentos de hadas!</p>
+        </div>
+      </div>
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/flora/flora-michay.JPG" alt="Michay"></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-etiqueta">🟡 Con espinas</div>
+          <h3 class="tarjeta-titulo">El Michay</h3>
+          <p class="tarjeta-texto">Este arbusto tiene espinas largas y flores amarillas como campanas pequeñas. Sus frutos azules son alimento para los pájaros. ¡Es una planta guerrera que sobrevive al frío extremo!</p>
+        </div>
+      </div>
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/flora/flora-calafate.jpg" alt="Fruto del Calafate"></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-etiqueta">🟣 Fruto dulce</div>
+          <h3 class="tarjeta-titulo">El Calafate</h3>
+          <p class="tarjeta-texto">Un arbusto con espinas y flores amarillas que da unos frutos de color oscuro muy dulces. Dicen que si comes frutos de este arbusto en la Patagonia... ¡siempre volverás allí!</p>
+        </div>
+      </div>
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/flora/flora-frutilla.jpeg" alt="Frutilla silvestre"></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-etiqueta">🍓 Pequeña pero rica</div>
+          <h3 class="tarjeta-titulo">Frutilla Silvestre</h3>
+          <p class="tarjeta-texto">Una plantita pequeñita que crece casi pegada al suelo. En verano da unas frutillas muy chicas que esconden el sabor más dulce e intenso que un niño pueda probar jamás en el bosque.</p>
+        </div>
+      </div>
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/flora/flora-chocho.jpg" alt="Chochos patagónicos"></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-etiqueta">🌸 Varitas mágicas</div>
+          <h3 class="tarjeta-titulo">Los Chochos (Lupinos)</h3>
+          <p class="tarjeta-texto">Son flores altas y coloridas que adornan los caminos de la Patagonia en verano. ¡Tienen un tallo tan largo que parecen varitas mágicas cubiertas de campanitas moradas, rosadas y azules!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

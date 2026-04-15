@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 Zona de Juegos — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .juegos-hero {
+      background: linear-gradient(135deg, #7B1FA2 0%, #E91E63 50%, #FF5722 100%);
+      padding: 80px 20px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .juegos-hero-titulo {
+      font-family: var(--font-titulo);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: white;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+      margin-bottom: 12px;
+    }
+    .juegos-hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 0;
+    }
+    .juegos-pepe {
+      width: 130px;
+      margin-bottom: 20px;
+      animation: flotar 3s ease-in-out infinite;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25));
+    }
+    @keyframes flotar {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+    .juegos-ola {
+      position: absolute; bottom: 0; width: 100%; line-height: 0;
+    }
+    .juegos-seccion {
+      background: linear-gradient(180deg, #f3e8ff 0%, #fff0f8 100%);
+      padding: 60px 20px 80px;
+    }
+    .juegos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .juego-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-radius: 28px;
+      padding: 40px 24px 32px;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+      transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.28s;
+      position: relative;
+      overflow: hidden;
+    }
+    .juego-card::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 180px;
+      height: 180px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50%;
+    }
+    .juego-card:hover {
+      transform: translateY(-10px) scale(1.04);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+    .juego-card-quiz  { background: linear-gradient(135deg, #7B1FA2, #CE93D8); }
+    .juego-card-memory { background: linear-gradient(135deg, #E91E63, #F48FB1); }
+    .juego-card-emoji  { font-size: 4rem; margin-bottom: 16px; }
+    .juego-card-titulo { font-family: var(--font-titulo); font-size: 1.7rem; font-weight: 800; margin-bottom: 10px; }
+    .juego-card-desc   { font-size: 0.95rem; opacity: 0.92; margin-bottom: 20px; line-height: 1.5; }
+    .juego-card-btn {
+      background: rgba(255,255,255,0.28);
+      border-radius: 50px;
+      padding: 10px 26px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 2px solid rgba(255,255,255,0.5);
+      color: white;
+      cursor: pointer;
+    }
+    .juegos-titulo-seccion {
+      font-family: var(--font-titulo);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--color-texto);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .juegos-subtitulo-seccion {
+      text-align: center;
+      color: var(--color-texto-claro);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../juegos/index.html" class="nav-activo"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<div class="juegos-hero">
+  <img src="../img/general/png-pepe.png" alt="Pepe" class="juegos-pepe">
+  <h1 class="juegos-hero-titulo">🎮 Zona de Juegos 🎮</h1>
+  <p class="juegos-hero-sub">¡Elige tu aventura y a jugar, Vicente!</p>
+  <div class="juegos-ola">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="width:100%;display:block;">
+      <path fill="#f3e8ff" d="M0,40 C360,80 720,0 1080,40 C1260,60 1360,20 1440,40 L1440,80 L0,80 Z"></path>
+    </svg>
+  </div>
+</div>
+
+<!-- ========== TARJETAS DE JUEGOS ========== -->
+<section class="juegos-seccion">
+  <h2 class="juegos-titulo-seccion">¿A qué jugamos hoy?</h2>
+  <p class="juegos-subtitulo-seccion">¡Dos juegos increíbles esperan por ti!</p>
+
+  <div class="juegos-grid">
+
+    <!-- Quiz -->
+    <a href="quiz/index.html" class="juego-card juego-card-quiz">
+      <div class="juego-card-emoji">🧠</div>
+      <div class="juego-card-titulo">Quiz + Números</div>
+      <div class="juego-card-desc">¡Pon a prueba todo lo que sabes sobre animales y naturaleza! Responde preguntas y gana estrellas.</div>
+      <div class="juego-card-btn">¡Jugar ahora! ➡️</div>
+    </a>
+
+    <!-- Memory -->
+    <a href="memory/index.html" class="juego-card juego-card-memory">
+      <div class="juego-card-emoji">🃏</div>
+      <div class="juego-card-titulo">Juego Memory</div>
+      <div class="juego-card-desc">¡Encuentra las parejas de animales! Usa tu memoria y trata de hacerlo con la menor cantidad de movimientos.</div>
+      <div class="juego-card-btn">¡Jugar ahora! ➡️</div>
+    </a>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer"
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Elige un juego y diviértete! 🎮</div>
+  <img src="../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>

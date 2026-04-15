@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧠 Quiz + Números — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../../index.html" class="nav-logo">
+      <img src="../../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../../flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../../dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../../insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../../marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../../arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../../octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../../juegos/index.html" class="nav-activo"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== QUIZ ========== -->
+<section class="seccion" id="quiz" style="background: linear-gradient(180deg, #F3E5F5 0%, #E1BEE7 50%, #CE93D8 100%);">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+      <span class="emoji-titulo">🧠</span> ¡Quiz de Vicente! <span class="emoji-titulo">⭐</span>
+    </h2>
+    <p class="seccion-subtitulo" style="color: rgba(255,255,255,0.9);">Elige una sección y pon a prueba lo que sabes 🌟</p>
+
+    <!-- ── SELECTOR DE SECCIONES ── -->
+    <div id="selectorSecciones">
+      <p style="text-align:center; color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:22px;">
+        ¡Gana ⭐⭐⭐ en cada sección!
+      </p>
+      <div id="seccionesGrid" class="secciones-quiz-grid"></div>
+    </div>
+
+    <!-- ── QUIZ ACTIVO ── -->
+    <div id="quizContenedor" class="quiz-contenedor aparicion" style="display:none;">
+      <button class="quiz-btn-volver" onclick="volverAlSelector()">← Elegir sección</button>
+      <div class="quiz-progreso" id="quizProgreso"></div>
+      <div id="quizEmoji" style="font-size: 4rem; margin-bottom: 15px;">🤔</div>
+      <p class="quiz-pregunta" id="quizPregunta"></p>
+      <div class="quiz-opciones" id="quizOpciones"></div>
+      <div class="quiz-resultado" id="quizResultado"></div>
+      <button class="quiz-btn-siguiente" id="quizSiguiente" onclick="siguientePregunta()">Siguiente pregunta ➡️</button>
+      <div id="quizFinal" style="display:none; text-align:center; padding:20px;">
+        <div style="font-size:4rem; margin-bottom:15px;">🏆</div>
+        <h3 style="font-family:var(--font-titulo); font-size:1.8rem; color:var(--color-coral); margin-bottom:10px;">¡Bien hecho, Vicente!</h3>
+        <p id="quizPuntaje" style="font-size:1.1rem; color:var(--color-texto); line-height:1.6;"></p>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:22px;">
+          <button class="btn-explorar" onclick="reiniciarQuiz()" style="opacity:1;animation:none;font-size:1rem;padding:12px 28px;">🔄 Jugar de nuevo</button>
+          <button class="btn-explorar" onclick="volverAlSelector()" style="opacity:1;animation:none;font-size:1rem;padding:12px 28px;background:var(--color-azul);">🗂️ Otra sección</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== CONTADORES ========== -->
+<section class="seccion" style="background: var(--grad-atardecer);">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo" style="color:white; text-shadow: 2px 2px 4px rgba(0,0,0,0.15);">
+      <span class="emoji-titulo">📊</span> ¡Números Increíbles! <span class="emoji-titulo">🔢</span>
+    </h2>
+    <div class="contador-grid">
+      <div class="contador-item aparicion">
+        <span class="contador-emoji">🐧</span>
+        <div class="contador-numero" data-target="100000">0</div>
+        <div class="contador-label">Pingüinos en Punta Arenas</div>
+      </div>
+      <div class="contador-item aparicion">
+        <span class="contador-emoji">🦋</span>
+        <div class="contador-numero" data-target="1000000">0</div>
+        <div class="contador-label">Especies de insectos</div>
+      </div>
+      <div class="contador-item aparicion">
+        <span class="contador-emoji">🌳</span>
+        <div class="contador-numero" data-target="3600">0</div>
+        <div class="contador-label">Años del alerce más viejo</div>
+      </div>
+      <div class="contador-item aparicion">
+        <span class="contador-emoji">🦕</span>
+        <div class="contador-numero" data-target="700">0</div>
+        <div class="contador-label">Especies de dinosaurios</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="../../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../../script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

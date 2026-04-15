@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🦋 Insectos — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../insectos/index.html" class="nav-activo"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../juegos/index.html"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== INSECTOS ========== -->
+<section class="seccion seccion-insectos" id="insectos">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo">
+      <span class="emoji-titulo">🦋</span> El Increíble Mundo de los Insectos <span class="emoji-titulo">🐛</span>
+    </h2>
+    <p class="seccion-subtitulo">Los insectos son los animales más numerosos del planeta. ¡Hay más de 1 millón de especies!</p>
+
+    <div class="destacada-layout aparicion">
+      <div class="destacada-imagen">
+        <img src="../img/insectos/insectos.png" alt="Insectos coloridos">
+      </div>
+      <div class="destacada-info">
+        <h3>🔬 Superpoderes de los insectos</h3>
+        <p>Los insectos son verdaderos superhéroes de la naturaleza. Algunos pueden cargar 50 veces su peso, otros brillan en la oscuridad y algunos pueden caminar sobre el agua.</p>
+        <div class="tarjeta-dato">
+          <span class="dato-emoji">💪</span>
+          <div class="dato-texto"><strong>Escarabajo rinoceronte:</strong> Puede cargar 850 veces su propio peso. Si tú fueras así de fuerte, ¡podrías levantar 6 autobuses!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="datos-curiosos-grid" style="margin-top:50px;">
+      <div class="dato-curioso color-sol aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/insectos/Abeja Melífera.jpg" alt="Abeja Melífera" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <h4>Abeja Melífera</h4>
+        <p>Visita hasta 5.000 flores en un solo día para hacer miel. Para producir 1 kilo de miel, las abejas deben visitar ¡4 millones de flores!</p>
+      </div>
+      <div class="dato-curioso color-cielo aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/insectos/Mariposa Monarca.jpg" alt="Mariposa Monarca" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <h4>Mariposa Monarca</h4>
+        <p>Viaja más de 4.000 kilómetros en su migración. ¡Es como si fueras caminando de Punta Arenas a Lima sin parar!</p>
+      </div>
+      <div class="dato-curioso color-coral aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/insectos/Hormiga Cortadora.jpg" alt="Hormiga Cortadora" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <h4>Hormiga Cortadora</h4>
+        <p>Son granjeras: cortan hojas y las usan para cultivar un hongo especial que es su comida. ¡Inventaron la agricultura millones de años antes que nosotros!</p>
+      </div>
+      <div class="dato-curioso color-hierba aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/insectos/Luciérnaga.jpg" alt="Luciérnaga" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <h4>Luciérnaga</h4>
+        <p>¡Producen su propia luz! Usan una reacción química en su cuerpo para brillar en la oscuridad. Cada especie tiene su propio patrón de parpadeo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

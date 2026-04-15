@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚢 Octonautas — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../octonautas/index.html" class="nav-activo"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../juegos/index.html"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== OCTONAUTAS ========== -->
+<section class="seccion seccion-octonautas" id="octonautas">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo">
+      <span class="emoji-titulo">🚢</span> ¡Misión Octonauta! <span class="emoji-titulo">🌊</span>
+    </h2>
+    <p class="seccion-subtitulo">Los Octonautas nos enseñan sobre las criaturas del océano</p>
+
+    <div class="destacada-layout aparicion">
+      <div class="destacada-imagen">
+        <img src="../img/octonautas/octonautas.png" alt="Los Octonautas en aventura">
+      </div>
+      <div class="destacada-info">
+        <h3>🐻‍❄️ Informe de Criatura</h3>
+        <p>¡Atención, Octonautas! Hoy exploraremos las criaturas más increíbles del mar y aprenderemos datos que te dejarán con la boca abierta.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <div class="dialogo-octonauta aparicion">
+        <div class="dialogo-avatar capitan">🐱</div>
+        <div class="dialogo-contenido">
+          <div class="dialogo-nombre capitan-nombre">Capitán Barnacles</div>
+          <div class="dialogo-burbuja">¡Octonautas, tenemos una misión! En las aguas del Estrecho de Magallanes hay criaturas fascinantes. ¿Sabían que el krill antártico, ese camaroncito diminuto, es el alimento favorito de las ballenas? ¡Un solo banco de krill puede tener millones de individuos y medir kilómetros de largo!</div>
+        </div>
+      </div>
+
+      <div class="dialogo-octonauta aparicion">
+        <div class="dialogo-avatar kwazii">🐱</div>
+        <div class="dialogo-contenido">
+          <div class="dialogo-nombre kwazii-nombre">Kwazii</div>
+          <div class="dialogo-burbuja">¡Yarr! Eso no es nada. ¿Saben qué encontré explorando las profundidades? ¡Un calamar gigante! Estos monstruos marinos pueden medir hasta 13 metros de largo y tienen los ojos más grandes del reino animal: ¡del tamaño de un plato de comida! En las aguas profundas de la Patagonia también habitan.</div>
+        </div>
+      </div>
+
+      <div class="dialogo-octonauta aparicion">
+        <div class="dialogo-avatar peso">🐧</div>
+        <div class="dialogo-contenido">
+          <div class="dialogo-nombre peso-nombre">Peso</div>
+          <div class="dialogo-burbuja">Como enfermero, debo contarles algo importante: las estrellas de mar pueden regenerar sus brazos. Si pierden uno, ¡les crece otro nuevo! Y el caballito de mar es el único animal donde el papá es quien tiene los bebés. ¡La naturaleza es maravillosa!</div>
+        </div>
+      </div>
+
+      <div class="dialogo-octonauta aparicion">
+        <div class="dialogo-avatar tweak">🐰</div>
+        <div class="dialogo-contenido">
+          <div class="dialogo-nombre tweak-nombre">Tweak</div>
+          <div class="dialogo-burbuja">¡Flappity-flippers! ¿Sabían que el pez payaso vive dentro de las anémonas de mar? La anémona lo protege con sus tentáculos venenosos y el pez payaso la mantiene limpia. ¡Es trabajo en equipo, como nosotros los Octonautas! Y hablando de equipo, el delfín nariz de botella puede comunicarse con más de 1.000 sonidos diferentes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

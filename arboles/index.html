@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌳 Árboles — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../arboles/index.html" class="nav-activo"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../juegos/index.html"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== ÁRBOLES ========== -->
+<section class="seccion seccion-arboles" id="arboles">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo">
+      <span class="emoji-titulo">🌳</span> Los Árboles Gigantes <span class="emoji-titulo">🌲</span>
+    </h2>
+    <p class="seccion-subtitulo">Los árboles son los pulmones de nuestro planeta y hogar de miles de animales</p>
+
+    <div class="destacada-layout aparicion">
+      <div class="destacada-info">
+        <h3>🌾 Los Álamos de la Patagonia</h3>
+        <p>Los álamos fueron traídos a la Patagonia hace mucho tiempo. Con sus hojas doradas en otoño, forman cortinas de viento que protegen casas y cultivos del poderoso viento patagónico que puede soplar a más de 100 km/h.</p>
+        <div class="tarjeta-dato">
+          <span class="dato-emoji">🌬️</span>
+          <div class="dato-texto"><strong>Escudos del viento:</strong> En Punta Arenas se plantan en hileras para proteger del viento. ¡Sin ellos, el viento se llevaría hasta los techos!</div>
+        </div>
+        <div class="tarjeta-dato">
+          <span class="dato-emoji">📏</span>
+          <div class="dato-texto"><strong>Crecimiento rápido:</strong> Un álamo puede crecer hasta 2 metros por año. En 10 años puede ser más alto que una casa de 3 pisos.</div>
+        </div>
+      </div>
+      <div class="destacada-imagen">
+        <img src="../img/arboles/arboles-alamos.png" alt="Álamos en otoño">
+      </div>
+    </div>
+
+    <div class="datos-curiosos-grid" style="margin-top:50px;">
+      <div class="dato-curioso color-hierba aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/arboles/Araucaria (Pehuén).jpg" alt="Araucaria" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <h4>Araucaria (Pehuén)</h4>
+        <p>¡Este árbol chileno tiene 200 millones de años! Existía cuando había dinosaurios. Sus piñones son deliciosos y los mapuche los llaman "ngüilliu".</p>
+      </div>
+      <div class="dato-curioso color-coral aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/arboles/Alerce Milenario.jpg" alt="Alerce Milenario" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <h4>Alerce Milenario</h4>
+        <p>El alerce del sur de Chile puede vivir más de 3.600 años. ¡Es el segundo árbol más longevo del mundo! Crece solo 1 milímetro de ancho por año.</p>
+      </div>
+      <div class="dato-curioso color-sol aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/arboles/Baobab Africano.webp" alt="Baobab Africano" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <h4>Baobab Africano</h4>
+        <p>¡Puede almacenar 120.000 litros de agua en su tronco! Parece que estuviera plantado al revés, con las raíces hacia el cielo. Vive más de 1.000 años.</p>
+      </div>
+      <div class="dato-curioso color-oceano aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/arboles/Secuoya Gigante.jfif" alt="Secuoya Gigante" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <h4>Secuoya Gigante</h4>
+        <p>Es el árbol más alto del mundo: ¡mide más de 100 metros! Eso es como un edificio de 30 pisos. Vive en California y puede tener 2.000 años de edad.</p>
+      </div>
+    </div>
+
+    <!-- Árboles Nativos de Punta Arenas -->
+    <h3 class="seccion-titulo-sub" style="text-align:center; margin-top:60px; margin-bottom:8px; font-family:var(--font-titulo); font-size:1.8rem; color:var(--color-oceano);">
+      🌲 Árboles Nativos de Punta Arenas 🌲
+    </h3>
+    <p class="seccion-subtitulo" style="text-align:center; margin-bottom:35px; color:var(--color-texto-claro); font-size:1.05rem;">
+      ¡Estas especies crecen en la Patagonia! y ¡aqui en Punta Arenas!
+    </p>
+
+    <div class="datos-curiosos-grid aparicion">
+      <div class="dato-curioso color-hierba aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/flora/Lenga (Nothofagus pumilio).gif" alt="Lenga" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <div class="tarjeta-etiqueta" style="margin-bottom:8px;">📍 Punta Arenas</div>
+        <h4>Lenga (Nothofagus pumilio)</h4>
+        <p>Es el árbol más famoso de nuestra zona. En otoño, sus hojas cambian de color a un rojo brillante, ¡parece que el bosque estuviera en llamas!</p>
+      </div>
+      <div class="dato-curioso color-cielo aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/flora/Coigüe de Magallanes (Nothofagus betuloides).jpg" alt="Coigüe de Magallanes" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <div class="tarjeta-etiqueta" style="margin-bottom:8px;">📍 Punta Arenas</div>
+        <h4>Coigüe de Magallanes</h4>
+        <p>Un árbol siempre verde que nunca pierde sus hojas, incluso en el invierno más frío. Es un gigante que protege a los demás animales del bosque.</p>
+      </div>
+      <div class="dato-curioso color-lavanda aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/flora/Ñirre (Nothofagus antarctica).webp" alt="Ñirre" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <div class="tarjeta-etiqueta" style="margin-bottom:8px;">📍 Punta Arenas</div>
+        <h4>Ñirre (Nothofagus antarctica)</h4>
+        <p>Muy valiente y resistente. Cuando el viento sopla muy fuerte, el Ñirre se dobla pero no se rompe. ¡Es un verdadero guerrero de la Patagonia!</p>
+      </div>
+      <div class="dato-curioso color-sol aparicion">
+        <div class="img-zoom-wrapper">
+          <img src="../img/flora/sauce chileno o criollo (Salix humboldtiana).gif" alt="Sauce Criollo" style="width:100%;height:160px;object-fit:cover;border-radius:12px;display:block;margin:0;animation:none;">
+        </div>
+        <div class="tarjeta-etiqueta" style="margin-bottom:8px;">📍 Punta Arenas</div>
+        <h4>Sauce Chileno (Salix humboldtiana)</h4>
+        <p>Le encanta vivir cerca del agua. Sus ramas largas y delgadas bailan con el viento. Es el único sauce que es nativo de nuestra región.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🦕 Dinosaurios — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../dinosaurios/index.html" class="nav-activo"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../juegos/index.html"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== DINOSAURIOS ========== -->
+<section class="seccion seccion-dinosaurios" id="dinosaurios">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo">
+      <span class="emoji-titulo">🦕</span> El Mundo de los Dinosaurios <span class="emoji-titulo">🦖</span>
+    </h2>
+    <p class="seccion-subtitulo">Hace millones de años, criaturas gigantes caminaban por la Patagonia</p>
+
+    <div class="destacada-layout aparicion">
+      <div class="destacada-info">
+        <h3>🦖 ¡Dinosaurios en la Patagonia!</h3>
+        <p>¿Sabías que en la Patagonia se han encontrado algunos de los dinosaurios más grandes que existieron? ¡La tierra donde vive Vicente fue hogar de gigantes!</p>
+        <div class="tarjeta-dato">
+          <span class="dato-emoji">🏆</span>
+          <div class="dato-texto"><strong>Patagotitan:</strong> Encontrado en la Patagonia argentina, era tan largo como 3 autobuses y pesaba como 10 elefantes. ¡El animal más grande que caminó sobre la Tierra!</div>
+        </div>
+      </div>
+      <div class="destacada-imagen">
+        <img src="../img/dinosaurios/dinosaurio.png" alt="Dinosaurio T-Rex">
+      </div>
+    </div>
+
+    <div class="acordeon" style="margin-top:50px;">
+      <div class="acordeon-item aparicion">
+        <button class="acordeon-header" onclick="toggleAcordeon(this)">
+          <span class="emoji-acordeon">🦖</span> Tyrannosaurus Rex — El Rey de los Dinosaurios
+          <span class="flecha">▼</span>
+        </button>
+        <div class="acordeon-body">
+          <div class="acordeon-contenido">
+            <p>El T-Rex medía <strong>12 metros de largo</strong> y tenía dientes del tamaño de plátanos. A pesar de sus bracitos cortos, era el depredador más temible de su época. Podía morder con una fuerza de <strong>6 toneladas</strong>, suficiente para aplastar un auto.</p>
+            <p>🦷 Tenía más de 50 dientes que se reemplazaban constantemente. ¡Si se le caía uno, le crecía otro!</p>
+          </div>
+        </div>
+      </div>
+      <div class="acordeon-item aparicion">
+        <button class="acordeon-header" onclick="toggleAcordeon(this)">
+          <span class="emoji-acordeon">🦕</span> Argentinosaurus — El Gigante Amable
+          <span class="flecha">▼</span>
+        </button>
+        <div class="acordeon-body">
+          <div class="acordeon-contenido">
+            <p>Este gigante herbívoro medía <strong>35 metros de largo</strong> y pesaba unas 70 toneladas. ¡Era tan alto como un edificio de 7 pisos! Comía plantas todo el día y vivía en manadas para protegerse.</p>
+            <p>🥬 Necesitaba comer más de 400 kilos de plantas cada día. ¡Imagina cuánta ensalada es eso!</p>
+          </div>
+        </div>
+      </div>
+      <div class="acordeon-item aparicion">
+        <button class="acordeon-header" onclick="toggleAcordeon(this)">
+          <span class="emoji-acordeon">🪶</span> Velocirraptor — La pluma veloz
+          <span class="flecha">▼</span>
+        </button>
+        <div class="acordeon-body">
+          <div class="acordeon-contenido">
+            <p>¡Sorpresa! El Velocirraptor real era del tamaño de un pavo y ¡tenía plumas! Pero era muy inteligente y cazaba en grupo. Tenía una garra especial en cada pata que usaba como un cuchillo.</p>
+            <p>🧠 Era uno de los dinosaurios más inteligentes. Su cerebro era grande en comparación con su cuerpo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="acordeon-item aparicion">
+        <button class="acordeon-header" onclick="toggleAcordeon(this)">
+          <span class="emoji-acordeon">🛡️</span> Triceratops — El de tres cuernos
+          <span class="flecha">▼</span>
+        </button>
+        <div class="acordeon-body">
+          <div class="acordeon-contenido">
+            <p>Tenía 3 cuernos en la cabeza y un escudo óseo enorme. Medía 9 metros y pesaba como 2 elefantes. Era herbívoro pero podía defenderse de un T-Rex con sus cuernos afilados.</p>
+            <p>🔨 Su pico era tan fuerte que podía cortar plantas duras como tijeras de jardín gigantes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

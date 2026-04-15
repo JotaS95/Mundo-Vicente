@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐋 Océano — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../marinos/index.html" class="nav-activo"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../juegos/index.html"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== ANIMALES MARINOS ========== -->
+<section class="seccion seccion-marinos" id="marinos">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo">
+      <span class="emoji-titulo">🐋</span> Criaturas del Océano <span class="emoji-titulo">🌊</span>
+    </h2>
+    <p class="seccion-subtitulo">El océano que rodea Punta Arenas está lleno de vida increíble</p>
+
+    <div class="destacada-layout aparicion">
+      <div class="destacada-info">
+        <h3>🐋 La Ballena Jorobada</h3>
+        <p>Estos gigantes gentiles pasan por el Estrecho de Magallanes durante su migración. Pueden medir 16 metros y pesan hasta 40 toneladas. ¡Son famosas por sus cantos que se escuchan a kilómetros bajo el agua!</p>
+        <div class="tarjeta-dato">
+          <span class="dato-emoji">🎵</span>
+          <div class="dato-texto"><strong>Cantantes del mar:</strong> El canto de una ballena jorobada puede durar hasta 20 minutos y se escucha a más de 30 kilómetros de distancia.</div>
+        </div>
+      </div>
+      <div class="destacada-imagen">
+        <img src="../img/marinos/animales-marinos.png" alt="Vida marina">
+      </div>
+    </div>
+
+    <div class="tarjeta-grid" style="margin-top:50px;">
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/marinos/Delfín Austral.jpg" alt="Delfín austral"></div>
+        <div class="tarjeta-cuerpo">
+          <h3 class="tarjeta-titulo">🐬 Delfín Austral</h3>
+          <p class="tarjeta-texto">Vive en los canales patagónicos y es uno de los delfines más pequeños del mundo. Le encanta surfear en las olas de los barcos. ¡Puede saltar hasta 2 metros fuera del agua!</p>
+        </div>
+      </div>
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/marinos/Pulpo Patagónico.jfif" alt="Pulpo"></div>
+        <div class="tarjeta-cuerpo">
+          <h3 class="tarjeta-titulo">🐙 Pulpo Patagónico</h3>
+          <p class="tarjeta-texto">Tiene 3 corazones, sangre azul y 8 brazos con ventosas. Puede cambiar de color en menos de 1 segundo y es tan inteligente que puede abrir frascos con tapa de rosca.</p>
+        </div>
+      </div>
+      <div class="tarjeta aparicion">
+        <div class="tarjeta-imagen"><img src="../img/marinos/Centolla Magallánica.jpeg" alt="Centolla"></div>
+        <div class="tarjeta-cuerpo">
+          <h3 class="tarjeta-titulo">🦀 Centolla Magallánica</h3>
+          <p class="tarjeta-texto">¡El cangrejo gigante de Punta Arenas! Puede medir hasta 50 cm con sus patas extendidas. Vive en las frías aguas del estrecho y es famosa en todo el mundo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../script.js"></script>
+</body>
+</html>
+
+</body>
+</html>

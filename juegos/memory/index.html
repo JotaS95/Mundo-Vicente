@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🃏 Juego Memory — El Mundo de Vicente</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="../../index.html" class="nav-logo">
+      <img src="../../img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../../fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="../../flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="../../carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="../../dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="../../insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="../../marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="../../mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="../../arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="../../octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="../../juegos/index.html" class="nav-activo"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== JUEGO DE MEMORY ========== -->
+<div class="separador-onda">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+    <path fill="#f3e7ff" d="M0,40 C360,80 720,0 1080,40 C1260,60 1360,20 1440,40 L1440,0 L0,0 Z"></path>
+  </svg>
+</div>
+
+<section class="seccion seccion-memory" id="memory">
+  <div class="seccion-contenido">
+    <h2 class="seccion-titulo">
+      <span class="emoji-titulo">🃏</span> Juego de Memory <span class="emoji-titulo">🧠</span>
+    </h2>
+    <p class="seccion-subtitulo">¡Encuentra las parejas de animales! ¿Cuántos movimientos necesitas?</p>
+
+    <div class="memory-panel">
+      <div class="memory-stats">
+        <div class="memory-stat">
+          <span class="stat-icon">🔄</span>
+          <span id="memory-moves">0</span>
+          <span class="stat-label">Movimientos</span>
+        </div>
+        <div class="memory-stat">
+          <span class="stat-icon">⭐</span>
+          <span id="memory-pairs">0</span>
+          <span class="stat-label">Parejas</span>
+        </div>
+        <div class="memory-stat">
+          <span class="stat-icon">⏱️</span>
+          <span id="memory-time">0</span>
+          <span class="stat-label">Segundos</span>
+        </div>
+      </div>
+
+      <div class="memory-grid" id="memoryGrid"></div>
+
+      <button class="btn-jugar-nuevo" onclick="iniciarMemory()" style="margin-top:25px;">🔄 Nueva Partida</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal de Victoria -->
+<div class="memory-victoria" id="memoryVictoria" style="display:none;">
+  <div class="victoria-contenido">
+    <img src="../../img/general/png-pepe.png" alt="Pepe feliz" class="victoria-pepe">
+    <h3>🎉 ¡Increíble, Vicente! 🎉</h3>
+    <p>¡Encontraste todas las parejas! ¡Eres un campeón!</p>
+    <div class="victoria-datos">
+      <span>🔄 <strong id="v-moves">0</strong> movimientos</span>
+      <span>⏱️ <strong id="v-time">0</strong> segundos</span>
+    </div>
+    <button class="btn-jugar-nuevo" onclick="iniciarMemory()">🔄 ¡Jugar de Nuevo!</button>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="../../img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="../../img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="../../script.js"></script>
+</body>
+</html>
+
+</body>
+</html>
