@@ -3,176 +3,307 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="El Mundo de Vicente - Página educativa interactiva sobre naturaleza, animales y ciencia para niños">
-  <title>🌎 El Mundo de Vicente</title>
-  <link rel="stylesheet" href="style.css">
-
+  <title>🔧 En Mantenimiento — El Mundo de Vicente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800&family=Fredoka:wght@600&display=swap" rel="stylesheet">
   <style>
-    .seccion-menu {
-      background: linear-gradient(180deg, #E8F5E9 0%, #fff8e1 100%);
-      padding: 60px 0 80px;
-    }
-    .menu-titulo {
-      font-family: var(--font-titulo);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      color: var(--color-texto);
-      text-align: center;
-      margin-bottom: 8px;
-    }
-    .menu-subtitulo {
-      text-align: center;
-      color: var(--color-texto-claro);
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-    }
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .menu-card {
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #1a237e 0%, #283593 30%, #1565C0 60%, #0288D1 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── Estrellas de fondo ── */
+    .estrellas { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .estrella {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      animation: parpadear var(--dur) ease-in-out infinite;
+      opacity: 0;
+    }
+    @keyframes parpadear {
+      0%, 100% { opacity: 0; transform: scale(0.8); }
+      50%       { opacity: var(--op); transform: scale(1.2); }
+    }
+
+    /* ── Nubes decorativas ── */
+    .nube {
+      position: fixed;
+      background: rgba(255,255,255,0.07);
+      border-radius: 50px;
+      animation: flotar-nube 18s ease-in-out infinite;
+    }
+    .nube::before, .nube::after {
+      content: '';
+      position: absolute;
+      background: inherit;
+      border-radius: 50%;
+    }
+    .n1 { width: 160px; height: 55px; top: 12%; left: -5%; animation-duration: 22s; }
+    .n1::before { width: 80px; height: 80px; top: -35px; left: 20px; }
+    .n1::after  { width: 60px; height: 60px; top: -20px; left: 70px; }
+    .n2 { width: 200px; height: 65px; top: 70%; right: -8%; animation-duration: 26s; animation-delay: -8s; }
+    .n2::before { width: 90px; height: 90px; top: -40px; left: 30px; }
+    .n2::after  { width: 70px; height: 70px; top: -25px; left: 90px; }
+    .n3 { width: 130px; height: 45px; bottom: 15%; left: 5%; animation-duration: 20s; animation-delay: -4s; }
+    .n3::before { width: 65px; height: 65px; top: -30px; left: 15px; }
+    @keyframes flotar-nube {
+      0%, 100% { transform: translateX(0) translateY(0); }
+      33%       { transform: translateX(30px) translateY(-10px); }
+      66%       { transform: translateX(-20px) translateY(8px); }
+    }
+
+    /* ── Tarjeta principal ── */
+    .tarjeta {
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 32px;
+      padding: 50px 40px 44px;
+      max-width: 520px;
+      width: 90%;
       text-align: center;
-      border-radius: 24px;
-      padding: 30px 20px 24px;
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.35),
+        0 0 0 3px rgba(255,255,255,0.2);
+      animation: entrar 0.8s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    @keyframes entrar {
+      from { opacity: 0; transform: translateY(40px) scale(0.9); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ── Pepe ── */
+    .pepe-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .pepe-img {
+      width: 150px;
+      filter: drop-shadow(0 12px 24px rgba(2,136,209,0.3));
+      animation: flotar-pepe 3.5s ease-in-out infinite;
+    }
+    @keyframes flotar-pepe {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50%       { transform: translateY(-14px) rotate(2deg); }
+    }
+    .casco {
+      position: absolute;
+      top: -18px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      animation: rotar-casco 4s ease-in-out infinite;
+    }
+    @keyframes rotar-casco {
+      0%, 100% { transform: translateX(-50%) rotate(-8deg); }
+      50%       { transform: translateX(-50%) rotate(8deg); }
+    }
+
+    /* ── Insignia ── */
+    .insignia {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg, #FF7043, #FFB74D);
       color: white;
-      text-decoration: none;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s;
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      animation: pulsar-insignia 2s ease-in-out infinite;
     }
-    .menu-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+    @keyframes pulsar-insignia {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,112,67,0.5); }
+      50%       { box-shadow: 0 0 0 8px rgba(255,112,67,0); }
     }
-    .menu-card-emoji  { font-size: 3rem; margin-bottom: 10px; }
-    .menu-card-titulo { font-family: var(--font-titulo); font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
-    .menu-card-desc   { font-size: 0.88rem; opacity: 0.9; margin-bottom: 14px; line-height: 1.4; }
-    .menu-card-btn    { background: rgba(255,255,255,0.25); border-radius: 50px; padding: 7px 18px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(255,255,255,0.4); }
-    .nav-activo { background: rgba(255,255,255,0.25) !important; border-radius: 8px; }
+    .dot {
+      width: 8px; height: 8px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      animation: parpadear-dot 1.2s ease-in-out infinite;
+    }
+    @keyframes parpadear-dot {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+    }
+
+    /* ── Textos ── */
+    h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.7rem, 5vw, 2.4rem);
+      font-weight: 800;
+      color: #1a237e;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    h1 span { color: #FF7043; }
+
+    .mensaje {
+      color: #455a64;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .mensaje strong { color: #0288D1; }
+
+    /* ── Barra de progreso animada ── */
+    .barra-wrap {
+      background: #E3F2FD;
+      border-radius: 50px;
+      height: 14px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .barra {
+      height: 100%;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #4FC3F7, #0288D1, #AB47BC, #FF7043);
+      background-size: 300% 100%;
+      animation: mover-barra 2.5s linear infinite;
+      width: 60%;
+    }
+    @keyframes mover-barra {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+
+    /* ── Tags de trabajo ── */
+    .trabajos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .tag {
+      background: #E3F2FD;
+      color: #0277BD;
+      border-radius: 50px;
+      padding: 5px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    /* ── Firma de papá ── */
+    .firma {
+      background: linear-gradient(135deg, #E8F5E9, #F1F8E9);
+      border-radius: 18px;
+      padding: 18px 22px;
+      border-left: 4px solid #66BB6A;
+    }
+    .firma p {
+      color: #388E3C;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .firma .corazon {
+      font-size: 1.4rem;
+      display: block;
+      margin-bottom: 4px;
+      animation: latir 1s ease-in-out infinite;
+    }
+    @keyframes latir {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.2); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .tarjeta { padding: 36px 24px 32px; }
+      .pepe-img { width: 120px; }
+    }
   </style>
-  <script>
-    if (localStorage.getItem('bienvenidaVisto')) {
-      document.documentElement.classList.add('bienvenida-ocultar');
-    }
-  </script>
 </head>
 <body>
 
-<!-- ========== PANTALLA DE BIENVENIDA ========== -->
-<div id="pantalla-bienvenida">
-  <div class="bienvenida-nubes">
-    <div class="nube nube-1"></div>
-    <div class="nube nube-2"></div>
-    <div class="nube nube-3"></div>
+<!-- Estrellas -->
+<div class="estrellas" id="estrellas"></div>
+
+<!-- Nubes -->
+<div class="nube n1"></div>
+<div class="nube n2"></div>
+<div class="nube n3"></div>
+
+<!-- Tarjeta -->
+<div class="tarjeta">
+
+  <!-- Pepe con casco de constructor -->
+  <div class="pepe-wrap">
+    <span class="casco">⛑️</span>
+    <img src="img/general/png-pepe.png" alt="Pepe" class="pepe-img">
   </div>
-  <span class="estrella-deco">⭐</span>
-  <span class="estrella-deco">🌟</span>
-  <span class="estrella-deco">✨</span>
-  <span class="estrella-deco">⭐</span>
-  <span class="estrella-deco">🌟</span>
-  <span class="estrella-deco">✨</span>
-  <div class="bienvenida-contenido">
-    <img src="img/general/pepe-vienvenida.png" alt="Pepe te da la bienvenida" class="pepe-bienvenida">
-    <h1 class="bienvenida-titulo">¡Bienvenido, hijo!</h1>
-    <p class="bienvenida-subtitulo">Pepe y tú van a explorar un mundo increíble 🌍</p>
-    <button class="btn-explorar" onclick="cerrarBienvenida()">
-      <span class="emoji-cohete">🚀</span> ¡Vamos a Explorar!
-    </button>
+
+  <!-- Estado -->
+  <div class="insignia">
+    <span class="dot"></span>
+    En mantenimiento
   </div>
+
+  <!-- Título -->
+  <h1>¡Volvemos <span>muy pronto</span>, Vicente! 🚀</h1>
+
+  <!-- Mensaje -->
+  <p class="mensaje">
+    Pepe y papá están trabajando duro para hacerte<br>
+    <strong>el mundo más increíble que hayas visto</strong> 🌍✨<br><br>
+    Estamos agregando cosas nuevas y geniales<br>
+    para que sigas aprendiendo y jugando.
+  </p>
+
+  <!-- Barra de progreso -->
+  <div class="barra-wrap">
+    <div class="barra"></div>
+  </div>
+
+  <!-- Tags de lo que se está haciendo -->
+  <div class="trabajos">
+    <span class="tag">🐧 Nuevos animales</span>
+    <span class="tag">🎮 Más juegos</span>
+    <span class="tag">🦕 Dinosaurios</span>
+    <span class="tag">🌿 Plantas</span>
+    <span class="tag">🐋 Océano</span>
+    <span class="tag">⭐ Sorpresas</span>
+  </div>
+
+  <!-- Firma -->
+  <div class="firma">
+    <span class="corazon">🐻💛</span>
+    <p>Hecho con mucho amor de papá para Vicente.<br>
+    ¡Tú y Pepe son el mejor equipo de exploradores!</p>
+  </div>
+
 </div>
 
-
-<!-- ========== NAVEGACIÓN ========== -->
-<nav class="nav-principal" id="nav">
-  <div class="nav-contenido">
-    <a href="#" class="nav-logo">
-      <img src="img/general/png-pepe.png" alt="Pepe">
-      <span class="nav-logo-texto">Mundo de Vicente</span>
-    </a>
-    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
-      <li><a href="flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
-      <li><a href="carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
-      <li><a href="dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
-      <li><a href="insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
-      <li><a href="marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
-      <li><a href="mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
-      <li><a href="arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
-      <li><a href="octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
-      <li><a href="juegos/index.html"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ========== HERO ========== -->
-<header class="hero">
-  <div class="hero-burbujas">
-    <div class="burbuja"></div><div class="burbuja"></div><div class="burbuja"></div>
-    <div class="burbuja"></div><div class="burbuja"></div><div class="burbuja"></div>
-  </div>
-  <div class="hero-contenido">
-    <img src="img/general/png-pepe.png" alt="Pepe" class="hero-pepe">
-    <h1 class="hero-titulo">🌎 !hola chancho¡🌎<br>🌎¡Explora el Mundo con Pepe! 🌎</h1>
-    
-    <!-- Botón de Audio Personalizado de Papá -->
-    <button class="btn-audio-especial" id="btnAudioPapa" onclick="reproducirAudioPapa()">
-      🔊 ¡Escucha el saludo de Papá!
-    </button>
-    
-    <p class="hero-subtitulo">Descubre los animales, plantas y secretos más increíbles de Punta Arenas, la Patagonia y todo el planeta</p>
-  </div>
-  <svg class="hero-montaña" viewBox="0 0 1440 200" preserveAspectRatio="none" style="position:absolute;bottom:0;width:100%">
-    <path fill="#E8F5E9" d="M0,120 C200,40 400,160 600,80 C800,0 1000,140 1200,60 C1300,20 1400,80 1440,50 L1440,200 L0,200 Z"></path>
-  </svg>
-</header>
-
-<footer class="footer">
-  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
-    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
-  </svg>
-  <div class="footer-contenido">
-    <button class="btn-narrador-footer" 
-      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
-      title="Escuchar mensaje">
-      <span class="icono-voz">🔊</span> Escuchar Mensaje
-    </button>
-    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
-    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
-    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
-    <img src="img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
-  </div>
-</footer>
-
-
-<div class="pepe-guia" id="pepeGuia">
-  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
-  <img src="img/general/png-pepe.png" alt="Pepe guía">
-</div>
-
-<!-- ========== CONTROLES FLOTANTES ========== -->
-<div class="control-narrador" id="controlNarrador">
-  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
-  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
-</div>
-
-<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
-
-<!-- ========== LIGHTBOX MODAL ========== -->
-<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
-  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
-  <div class="lightbox-caption" id="lightboxCaption"></div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+<script>
+  // Generar estrellas aleatorias
+  const contenedor = document.getElementById('estrellas');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'estrella';
+    const size = Math.random() * 3 + 1;
+    s.style.cssText = `
+      width:${size}px; height:${size}px;
+      top:${Math.random()*100}%;
+      left:${Math.random()*100}%;
+      --dur:${(Math.random()*3+2).toFixed(1)}s;
+      --op:${(Math.random()*0.6+0.2).toFixed(2)};
+      animation-delay:-${(Math.random()*5).toFixed(1)}s;
+    `;
+    contenedor.appendChild(s);
+  }
+</script>
 
 </body>
 </html>

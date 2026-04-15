@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El Mundo de Vicente - Página educativa interactiva sobre naturaleza, animales y ciencia para niños">
+  <title>🌎 El Mundo de Vicente</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .seccion-menu {
+      background: linear-gradient(180deg, #E8F5E9 0%, #fff8e1 100%);
+      padding: 60px 0 80px;
+    }
+    .menu-titulo {
+      font-family: var(--font-titulo);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--color-texto);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .menu-subtitulo {
+      text-align: center;
+      color: var(--color-texto-claro);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .menu-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-radius: 24px;
+      padding: 30px 20px 24px;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s;
+    }
+    .menu-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+    }
+    .menu-card-emoji  { font-size: 3rem; margin-bottom: 10px; }
+    .menu-card-titulo { font-family: var(--font-titulo); font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
+    .menu-card-desc   { font-size: 0.88rem; opacity: 0.9; margin-bottom: 14px; line-height: 1.4; }
+    .menu-card-btn    { background: rgba(255,255,255,0.25); border-radius: 50px; padding: 7px 18px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(255,255,255,0.4); }
+    .nav-activo { background: rgba(255,255,255,0.25) !important; border-radius: 8px; }
+  </style>
+  <script>
+    if (localStorage.getItem('bienvenidaVisto')) {
+      document.documentElement.classList.add('bienvenida-ocultar');
+    }
+  </script>
+</head>
+<body>
+
+<!-- ========== PANTALLA DE BIENVENIDA ========== -->
+<div id="pantalla-bienvenida">
+  <div class="bienvenida-nubes">
+    <div class="nube nube-1"></div>
+    <div class="nube nube-2"></div>
+    <div class="nube nube-3"></div>
+  </div>
+  <span class="estrella-deco">⭐</span>
+  <span class="estrella-deco">🌟</span>
+  <span class="estrella-deco">✨</span>
+  <span class="estrella-deco">⭐</span>
+  <span class="estrella-deco">🌟</span>
+  <span class="estrella-deco">✨</span>
+  <div class="bienvenida-contenido">
+    <img src="img/general/pepe-vienvenida.png" alt="Pepe te da la bienvenida" class="pepe-bienvenida">
+    <h1 class="bienvenida-titulo">¡Bienvenido, hijo!</h1>
+    <p class="bienvenida-subtitulo">Pepe y tú van a explorar un mundo increíble 🌍</p>
+    <button class="btn-explorar" onclick="cerrarBienvenida()">
+      <span class="emoji-cohete">🚀</span> ¡Vamos a Explorar!
+    </button>
+  </div>
+</div>
+
+
+<!-- ========== NAVEGACIÓN ========== -->
+<nav class="nav-principal" id="nav">
+  <div class="nav-contenido">
+    <a href="#" class="nav-logo">
+      <img src="img/general/png-pepe.png" alt="Pepe">
+      <span class="nav-logo-texto">Mundo de Vicente</span>
+    </a>
+    <button class="nav-hamburguesa" id="btnHamburguesa" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="fauna/index.html"><span class="nav-emoji">🐧</span> Fauna</a></li>
+      <li><a href="flora/index.html"><span class="nav-emoji">🌿</span> Flora</a></li>
+      <li><a href="carnivoras/index.html"><span class="nav-emoji">🪴</span> Carnívoras</a></li>
+      <li><a href="dinosaurios/index.html"><span class="nav-emoji">🦕</span> Dinosaurios</a></li>
+      <li><a href="insectos/index.html"><span class="nav-emoji">🦋</span> Insectos</a></li>
+      <li><a href="marinos/index.html"><span class="nav-emoji">🐋</span> Océano</a></li>
+      <li><a href="mascotas/index.html"><span class="nav-emoji">🐱</span> Mascotas</a></li>
+      <li><a href="arboles/index.html"><span class="nav-emoji">🌳</span> Árboles</a></li>
+      <li><a href="octonautas/index.html"><span class="nav-emoji">🚢</span> Octonautas</a></li>
+      <li><a href="juegos/index.html"><span class="nav-emoji">🎮</span> Zona de Juegos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<header class="hero">
+  <div class="hero-burbujas">
+    <div class="burbuja"></div><div class="burbuja"></div><div class="burbuja"></div>
+    <div class="burbuja"></div><div class="burbuja"></div><div class="burbuja"></div>
+  </div>
+  <div class="hero-contenido">
+    <img src="img/general/png-pepe.png" alt="Pepe" class="hero-pepe">
+    <h1 class="hero-titulo">🌎 !hola chancho¡🌎<br>🌎¡Explora el Mundo con Pepe! 🌎</h1>
+    
+    <!-- Botón de Audio Personalizado de Papá -->
+    <button class="btn-audio-especial" id="btnAudioPapa" onclick="reproducirAudioPapa()">
+      🔊 ¡Escucha el saludo de Papá!
+    </button>
+    
+    <p class="hero-subtitulo">Descubre los animales, plantas y secretos más increíbles de Punta Arenas, la Patagonia y todo el planeta</p>
+  </div>
+  <svg class="hero-montaña" viewBox="0 0 1440 200" preserveAspectRatio="none" style="position:absolute;bottom:0;width:100%">
+    <path fill="#E8F5E9" d="M0,120 C200,40 400,160 600,80 C800,0 1000,140 1200,60 C1300,20 1400,80 1440,50 L1440,200 L0,200 Z"></path>
+  </svg>
+</header>
+
+<footer class="footer">
+  <svg class="footer-onda" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#FF7043" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,0 L0,0 Z"></path>
+  </svg>
+  <div class="footer-contenido">
+    <button class="btn-narrador-footer" 
+      onclick="leerTexto('Hecho con mucho amor de papá para Vicente. Sigue explorando, aprendiendo y descubriendo el mundo. Pepe y tú son el mejor equipo de exploradores hijo. Te amo mucho chancho.', this)"
+      title="Escuchar mensaje">
+      <span class="icono-voz">🔊</span> Escuchar Mensaje
+    </button>
+    <h3>🌟 Hecho con mucho amor de papá para Vicente 🌟</h3>
+    <p>🌎Sigue explorando, aprendiendo y descubriendo el mundo 🌎</p>
+    <p style="margin-top:15px; opacity:0.6;">🐻💛Pepe y tú son el mejor equipo de exploradores hijo 🐻💛<br>🐻💛Te amo mucho chancho🐻💛</p>
+    <img src="img/general/png-pepe.png" alt="Pepe" class="footer-pepe">
+  </div>
+</footer>
+
+
+<div class="pepe-guia" id="pepeGuia">
+  <div class="pepe-tooltip" id="pepeTooltip">¡Haz clic en las secciones para aprender cosas nuevas! 🌟</div>
+  <img src="img/general/png-pepe.png" alt="Pepe guía">
+</div>
+
+<!-- ========== CONTROLES FLOTANTES ========== -->
+<div class="control-narrador" id="controlNarrador">
+  <button id="btnPausarNarrador" onclick="togglePausarNarrador()" title="Pausar/Continuar lectura">⏸️</button>
+  <button id="btnDetenerNarrador" onclick="detenerNarrador()" title="Detener la lectura">⏹️</button>
+</div>
+
+<button class="btn-subir" id="btnSubir" onclick="subirArriba()" title="Volver al inicio">⬆️</button>
+
+<!-- ========== LIGHTBOX MODAL ========== -->
+<div class="lightbox-modal" id="lightboxModal" onclick="cerrarLightbox()">
+  <span class="lightbox-cerrar" title="Cerrar">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Imagen ampliada">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+</body>
+</html>
